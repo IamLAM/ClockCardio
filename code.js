@@ -19,28 +19,29 @@ $("#session-decrement").on("click",sessionDecrement);
 
 
 function breakIncrement(){
-
+ if(breakk<60){
     breakk++;
+    console.log("break:"+breakk);
     $("#break-length").html(breakk);
-    
+ }
 }
 
 function breakDecrement(){
 
-    if(breakk>1){
-        breakk--;
-        $("#break-length").html(breakk);
-      }
-
+  if(breakk>1){
+    breakk--;
+    $("#break-length").html(breakk);
+  }
 }
 
 
 
 function sessionIncrement(){
-
+   if(session<60){
     session++;
+     console.log("session:"+session);
     $("#session-length").html(session);
-
+   }
 }
 
 function sessionDecrement(){
