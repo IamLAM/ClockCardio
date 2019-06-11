@@ -39,4 +39,11 @@ body {
     font-size: 40px;
 }
 
-#session-increment:active {}
+#session-increment:active,
+#break-increment:active,
+#break-decrement:active,
+#session-decrement:active,
+#start_stop:active,
+#reset:active {
+    color: #a9dbb8;
+}
