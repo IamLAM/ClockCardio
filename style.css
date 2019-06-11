@@ -31,4 +31,12 @@ body {
     font-size: 40px;
 }
 
+#start_stop {
+    font-size: 40px;
+}
+
+#reset {
+    font-size: 40px;
+}
+
 #session-increment:active {}
