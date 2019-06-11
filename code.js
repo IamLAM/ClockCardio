@@ -22,13 +22,15 @@ function breakIncrement(){
 
     breakk++;
     $("#break-length").html(breakk);
-
+    
 }
 
 function breakDecrement(){
 
-    breakk--;
-    $("#break-length").html(breakk);
+    if(breakk>1){
+        breakk--;
+        $("#break-length").html(breakk);
+      }
 
 }
 
@@ -42,8 +44,8 @@ function sessionIncrement(){
 }
 
 function sessionDecrement(){
-
-    session--;
+    if(session>1){
+     session--;
     $("#session-length").html(session);
-
+    }
 }
