@@ -21,9 +21,9 @@ function breakIncrement(){
 
 }
 
-function breakIncrement(){
+function breakDecrement(){
 
-    breakInc++;
+    breakInc--;
     $("#break-length").html(breakInc);
 
 }
