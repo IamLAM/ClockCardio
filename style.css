@@ -1,0 +1,20 @@
+body {
+    background-color: #020887;
+    color: #7ca5b8;
+}
+
+#cardio {
+    background-color: #38369a;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#session-increment {
+    font-size: 40px;
+}
+
+#session-decrement {
+    font-size: 40px;
+}
+
+#session-increment:active {}
