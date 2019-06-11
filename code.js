@@ -21,14 +21,14 @@ $("#session-decrement").on("click",sessionDecrement);
 function breakIncrement(){
 
     breakk++;
-    $("#break-length").html(breakInc);
+    $("#break-length").html(breakk);
 
 }
 
 function breakDecrement(){
 
     breakk--;
-    $("#break-length").html(breakInc);
+    $("#break-length").html(breakk);
 
 }
 
