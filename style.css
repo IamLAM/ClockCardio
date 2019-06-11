@@ -1,12 +1,18 @@
 body {
     background-color: #020887;
     color: #7ca5b8;
+    text-align: center;
 }
+
+* {}
 
 #cardio {
     background-color: #38369a;
     padding: 15px;
     border-radius: 10px;
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 #session-increment {
@@ -14,6 +20,14 @@ body {
 }
 
 #session-decrement {
+    font-size: 40px;
+}
+
+#break-increment {
+    font-size: 40px;
+}
+
+#break-decrement {
     font-size: 40px;
 }
 
