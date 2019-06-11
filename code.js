@@ -1,4 +1,5 @@
-var breakInc=5;
+var breakk=5;
+var session=25;
 
 
 $(document).ready(function(){
@@ -7,6 +8,9 @@ console.log("file linked");
 
 $("#break-increment").on("click",breakIncrement);
 $("#break-decrement").on("click",breakDecrement);
+$("#session-increment").on("click",sessionIncrement);
+$("#session-decrement").on("click",sessionDecrement);
+
 
 
 
@@ -16,14 +20,30 @@ $("#break-decrement").on("click",breakDecrement);
 
 function breakIncrement(){
 
-    breakInc++;
+    breakk++;
     $("#break-length").html(breakInc);
 
 }
 
 function breakDecrement(){
 
-    breakInc--;
+    breakk--;
     $("#break-length").html(breakInc);
+
+}
+
+
+
+function sessionIncrement(){
+
+    session++;
+    $("#session-length").html(session);
+
+}
+
+function sessionDecrement(){
+
+    session--;
+    $("#session-length").html(session);
 
 }
