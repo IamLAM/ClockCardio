@@ -44,7 +44,7 @@ function sessionIncrement(){
     session++;
      console.log("session:"+session);
     $("#session-length").html(session);
-    $("#timer-left").html(session+":00");
+    $("#time-left").html(session+":00");
    }
 }
 
@@ -52,7 +52,7 @@ function sessionDecrement(){
     if(session>1){
      session--;
     $("#session-length").html(session);
-    $("#timer-left").html(session+":00");
+    $("#time-left").html(session+":00");
     }
 }
 
@@ -63,7 +63,7 @@ function sessionStart(){
     state=$("#state").html();
     if(state=="Starting"||state=="None"){
      
-    time_left= $("#timer-left").html();
+    time_left= $("#time-left").html();
     session = 60 * parseInt(time_left, 10);
    
     console.log("time:"+session);
@@ -88,7 +88,7 @@ function sessionStart(){
     sec=parseInt(session%60,10);
     min=("0"+min).slice(-2);
     sec=("0"+sec).slice(-2);
-    $("#timer-left").html(min+":"+sec);
+    $("#time-left").html(min+":"+sec);
 
     },1000);
     changeState();
@@ -112,7 +112,7 @@ function resetState(){
   
   $("#session-length").html(session);
   $("#break-length").html(breakk);
-  $("#timer-left").html(session+":00");
+  $("#time-left").html(session+":00");
   $("#state").html("None");
   clearInterval(interval);
   $("#beep").trigger("pause");
