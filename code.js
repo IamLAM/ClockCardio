@@ -1,6 +1,8 @@
 var breakk=5;
 var session=25;
-
+var min;
+var sec;
+var interval=0;
 
 $(document).ready(function(){
 
@@ -55,6 +57,22 @@ function sessionDecrement(){
 }
 
 function sessionStart(){
+
+    let time_left = $("#timer-left").html();
+    session = 60 * parseInt(time_left, 10);
+   
+    console.log("time:"+session);
+
+    interval=setInterval(function(){
+      console.log("interval function");
+    session--;
+    min=parseInt(session/60,10);
+    sec=parseInt(session%60,10);
+    min=("0"+min).slice(-2);
+    sec=("0"+sec).slice(-2);
+    $("#timer-left").html(min+":"+sec);
+
+    },1000);
 
 }
 
