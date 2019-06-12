@@ -3,11 +3,14 @@ var session=25;
 var min;
 var sec;
 var interval=0;
+let label;
+let time_left;
+let state;
 
 $(document).ready(function(){
 
 console.log("file linked");
-
+time_left= $("#time-left").html();
 $("#break-increment").on("click",breakIncrement);
 $("#break-decrement").on("click",breakDecrement);
 $("#session-increment").on("click",sessionIncrement);
@@ -57,21 +60,24 @@ function sessionDecrement(){
 }
 
 function sessionStart(){
-    let label;
-    let time_left;
-    let state;
+    console.log("Inside");
+    time_left= $("#time-left").html();
+    console.log("Time-left-in:"+time_left);
     state=$("#state").html();
+   
     if(state=="Starting"||state=="None"){
      
     time_left= $("#time-left").html();
     session = 60 * parseInt(time_left, 10);
    
     console.log("time:"+session);
+    $("#time").html(session);
 
     interval=setInterval(function(){
       console.log("interval function");
     
     session--;
+    console.log(session);
     if(session<0){
       label=$("#timer-label").html();
       if(label!="Break"){
@@ -93,8 +99,13 @@ function sessionStart(){
     },1000);
     changeState();
   }else{
+    console.log("state changed");
     changeState();
     clearInterval(interval);
+    time_left= $("#time-left").html();
+    console.log("Time-left-out:"+time_left);
+    console.log(session);
+    $("#time").html(session);
   }
 }
 
@@ -102,8 +113,10 @@ function changeState(){
   if ($("#state").html() == "Starting"||$("#state").html() == "None") {
     
     $("#state").html("Stop");
+    console.log("Stop...");
   } else {
      $("#state").html("Starting");
+     console.log("Starting...");
   }
 }
 function resetState(){

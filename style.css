@@ -11,6 +11,17 @@ body {
     width: 600px;
     margin: 0 auto;
     text-align: center;
+    position: relative;
+}
+
+#session-label {
+    display: inline-block;
+    padding: 10px;
+}
+
+#break-label {
+    display: inline-block;
+    padding: 10px;
 }
 
 #session-length {
@@ -54,8 +65,8 @@ body {
     color: #c6ebbe;
 }
 
-#timer-left {
-    font-size: 50px;
+#time-left {
+    font-size: 80px;
 }
 
 #state {
