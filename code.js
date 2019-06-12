@@ -41,6 +41,7 @@ function sessionIncrement(){
     session++;
      console.log("session:"+session);
     $("#session-length").html(session);
+    $("#timer-left").html(session+":00");
    }
 }
 
@@ -48,5 +49,6 @@ function sessionDecrement(){
     if(session>1){
      session--;
     $("#session-length").html(session);
+    $("#timer-left").html(session+":00");
     }
 }
