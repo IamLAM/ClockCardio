@@ -10,6 +10,7 @@ $("#break-increment").on("click",breakIncrement);
 $("#break-decrement").on("click",breakDecrement);
 $("#session-increment").on("click",sessionIncrement);
 $("#session-decrement").on("click",sessionDecrement);
+$("#start_stop").on("click",startSession);
 $("#reset").on("click",resetState);
 
 
@@ -52,6 +53,11 @@ function sessionDecrement(){
     $("#timer-left").html(session+":00");
     }
 }
+
+function startSession(){
+  
+}
+
 
 function resetState(){
    breakk=5;
