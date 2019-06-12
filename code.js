@@ -77,9 +77,11 @@ function sessionStart(){
       if(label!="Break"){
         $("#timer-label").html("Break");
         session=parseInt($("#break-length").html(),10)*60;
+        $("#beep").trigger("play");
       }else{
         $("#timer-label").html("Session");
         session=parseInt($("#session-length").html(),10)*60;
+        $("#beep").trigger("play");
       }
     }
     min=parseInt(session/60,10);
@@ -113,4 +115,6 @@ function resetState(){
   $("#timer-left").html(session+":00");
   $("#state").html("None");
   clearInterval(interval);
+  $("#beep").trigger("pause");
+  $("#beep").prop("currentTime",0);
 }
