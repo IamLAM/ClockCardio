@@ -57,3 +57,7 @@ body {
 #timer-left {
     font-size: 50px;
 }
+
+#state {
+    color: #38369a;
+}

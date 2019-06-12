@@ -58,7 +58,12 @@ function sessionDecrement(){
 
 function sessionStart(){
     let label;
-    let time_left = $("#timer-left").html();
+    let time_left;
+    let state;
+    state=$("#state").html();
+    if(state=="Starting"||state=="None"){
+     
+    time_left= $("#timer-left").html();
     session = 60 * parseInt(time_left, 10);
    
     console.log("time:"+session);
@@ -84,10 +89,21 @@ function sessionStart(){
     $("#timer-left").html(min+":"+sec);
 
     },1000);
-
+    changeState();
+  }else{
+    changeState();
+    clearInterval(interval);
+  }
 }
 
-
+function changeState(){
+  if ($("#state").html() == "Starting"||$("#state").html() == "None") {
+    
+    $("#state").html("Stop");
+  } else {
+     $("#state").html("Starting");
+  }
+}
 function resetState(){
    breakk=5;
    session=25;
@@ -95,5 +111,6 @@ function resetState(){
   $("#session-length").html(session);
   $("#break-length").html(breakk);
   $("#timer-left").html(session+":00");
+  $("#state").html("None");
   clearInterval(interval);
 }
