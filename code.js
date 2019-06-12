@@ -57,7 +57,7 @@ function sessionDecrement(){
 }
 
 function sessionStart(){
-
+    let label;
     let time_left = $("#timer-left").html();
     session = 60 * parseInt(time_left, 10);
    
@@ -65,7 +65,18 @@ function sessionStart(){
 
     interval=setInterval(function(){
       console.log("interval function");
+    
     session--;
+    if(session<0){
+      label=$("#timer-label").html();
+      if(label!="Break"){
+        $("#timer-label").html("Break");
+        session=parseInt($("#break-length").html(),10)*60;
+      }else{
+        $("#timer-label").html("Session");
+        session=parseInt($("#session-length").html(),10)*60;
+      }
+    }
     min=parseInt(session/60,10);
     sec=parseInt(session%60,10);
     min=("0"+min).slice(-2);
@@ -84,4 +95,5 @@ function resetState(){
   $("#session-length").html(session);
   $("#break-length").html(breakk);
   $("#timer-left").html(session+":00");
+  clearInterval(interval);
 }
