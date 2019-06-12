@@ -117,4 +117,5 @@ function resetState(){
   clearInterval(interval);
   $("#beep").trigger("pause");
   $("#beep").prop("currentTime",0);
+  $("#timer-label").html("Session");
 }
